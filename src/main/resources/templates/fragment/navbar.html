@@ -1,0 +1,42 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" lang="en">
+<body>
+  <div th:fragment="navbar">
+    <nav class="navbar navbar-expand-lg bg-body-tertiar d-flex" style="background-color: #00BFFF;">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <img src="/images/band.png" alt="Logo" width="100" height="60" class="d-inline-block align-text-top">
+          <img src="/images/mo.png" alt="Logo" width="200" height="60" class="d-inline-block align-text-top">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+            <li class="nav-item">
+              <a href="/cart" class="nav-link">
+                <i class="fa-solid fa-cart-arrow-down fa-fw fa-xl" ></i>
+                <span th:text="${count}" style="color: white; font-size: 14px"></span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="/" th:class="${page == '/home' ? 'nav-link active' : 'nav-link'}" style="color: white; font-size: 25px" >หน้าหลัก</a>
+            </li>
+
+            <li class="nav-item">
+              <a href="/product" th:class="${page == '/product' ? 'nav-link active' : 'nav-link'}" style="color: white; font-size: 25px">เพิ่มสินค้า</a>
+            </li>
+
+            <li class="nav-item">
+              <a href="/report" th:class="${page == '/report' ? 'nav-link active' : 'nav-link'}" style="color: white; font-size: 25px">บันทึกการขาย</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</body>
+</html>
